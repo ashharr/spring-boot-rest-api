@@ -1,0 +1,11 @@
+package com.myrestapp.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.web.bind.annotation.PostMapping;
+
+import com.myrestapp.model.Customer;
+
+public interface CustomerRepository extends JpaRepository<Customer, Long>{
+	
+	
+}
