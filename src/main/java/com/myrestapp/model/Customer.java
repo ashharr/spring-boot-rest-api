@@ -4,6 +4,7 @@ package com.myrestapp.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="customer")
@@ -22,7 +25,7 @@ public class Customer {
 	private String name;
 	private String city;
 	
-	@ManyToMany
+	@ManyToMany()
 	@JoinTable(name = "customer_product", joinColumns = @JoinColumn(name = "customer_id"),
 	inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private List<Product> product;
@@ -53,6 +56,14 @@ public class Customer {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+	
+	public List<Product> getProduct() {
+		return product;
+	}
+
+	public void setProduct(List<Product> product) {
+		this.product = product;
 	}
 
 	@Override

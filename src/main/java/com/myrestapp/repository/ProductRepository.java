@@ -14,4 +14,6 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
 	Product findByTitle(String title);
 	
 	List<Product> findByPrice(Double price);
+
+	List<Product> getProductByCustomerId(Long cid);
 }
